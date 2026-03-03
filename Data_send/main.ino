@@ -26,7 +26,10 @@ void setup() { // indoor temperature sensor script
   if (esp_now_init() != ESP_OK) {
     Serial.println("Error initializing ESP-NOW");
     espnowReady = false;
-    return;
+    while (true) {
+      Serial.println("ESP-NOW init failed, halted");
+      delay(1000);
+    }
   }
 
   // Register send callback for fails

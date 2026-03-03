@@ -1,0 +1,6 @@
+# Copy this file to config.py and fill in your values.
+# config.py is gitignored to keep credentials out of version control.
+
+MQTT_BROKER = "192.168.1.170"
+MQTT_PORT   = 1883
+CSV_FILE    = "demofile.csv"

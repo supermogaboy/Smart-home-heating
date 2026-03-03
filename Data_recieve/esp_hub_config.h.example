@@ -1,0 +1,9 @@
+// Copy this file to esp_hub_config.h and fill in your values.
+// esp_hub_config.h is gitignored to keep credentials out of version control.
+
+#pragma once
+
+const char* WIFI_SSID   = "your_wifi_ssid";
+const char* WIFI_PASS   = "your_wifi_password";
+const char* MQTT_SERVER = "192.168.1.170";
+const int   MQTT_PORT   = 1883;

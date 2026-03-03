@@ -42,7 +42,10 @@ void setup() {
 
   if (esp_now_init() != ESP_OK) {
     Serial.println("Error initializing ESP-NOW");
-    return;
+    while (true) {
+      Serial.println("ESP-NOW init failed, halted");
+      delay(1000);
+    }
   }
   esp_now_register_recv_cb(OnDataRecv);
 
