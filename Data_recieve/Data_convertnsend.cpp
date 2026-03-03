@@ -27,6 +27,7 @@ static void ensureMQTT() {
     clientId += String((uint32_t)ESP.getEfuseMac(), HEX);
 
     if (!mqttClient.connect(clientId.c_str())) {
+      Serial.println("MQTT connection failed, retrying...");
       delay(1000);
     }
   }

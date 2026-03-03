@@ -5,6 +5,7 @@ AHT20 aht20;
 
 
   void data_collect(datapack *collection){
+    collection->protocolVersion=1;
     collection->nodeID=1;//default
     collection->sensorType=1;//temp
     collection->temperature=aht20.getTemperature();

@@ -1,7 +1,10 @@
 #pragma once
 #include <Arduino.h>
+#include <esp_now.h>
 
-
+extern bool espnowReady;
+extern esp_now_peer_info_t peerInfo;
+extern uint8_t broadcastAddress[6];
 
 typedef struct __attribute__((packed)) SensorPacket {
     uint8_t  protocolVersion;   // For future changes to the packet format
@@ -19,4 +22,4 @@ typedef struct __attribute__((packed)) SensorPacket {
     
 }datapack;
 void data_collect(datapack *collection);
-void OnDataSent(const wifi_tx_info_t *tx_info, esp_now_send_status_t status);
+void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status);
